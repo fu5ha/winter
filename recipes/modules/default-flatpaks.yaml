@@ -1,0 +1,16 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+type: default-flatpaks
+configurations:
+  - notify: true # Send notification after install/uninstall is finished (true/false)
+    scope: system
+    install: # system flatpaks we want all users to have and not remove
+      - org.mozilla.firefox
+      - com.bitwarden.desktop
+      - dev.vencord.Vesktop
+      - com.slack.Slack
+      - org.localsend.localsend_app
+      - org.avidemux.Avidemux
+      - md.obsidian.Obsidian
+  - scope: user # Also add Flathub user repo, but no user packages

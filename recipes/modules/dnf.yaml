@@ -1,0 +1,27 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+type: dnf
+repos:
+  nonfree: rpmfusion
+  copr:
+    - scottames/ghostty
+install:
+  packages:
+    - ghostty
+    - btrfs-assistant # GUI for btrfs snaphots and other
+    - "@development-tools"
+    - clang
+    - llvm
+    - hx
+    - zoxide
+    - fd
+    - rg
+group-install:
+  packages:
+    - virtualization
+remove:
+  packages:
+    # Remove firefox, in favor of the flatpak
+    - firefox
+    - firefox-langpacks
