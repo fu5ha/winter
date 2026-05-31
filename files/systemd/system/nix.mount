@@ -1,5 +1,7 @@
 [Unit]
 Description=Bind mount /var/nix to /nix
+Requires=var-nix.service
+After=var-nix.service
 
 [Mount]
 What=/var/nix

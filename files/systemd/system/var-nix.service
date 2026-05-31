@@ -1,0 +1,12 @@
+[Unit]
+Description=Create backing directory for /nix bind mount
+DefaultDependencies=no
+Before=nix.mount
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/install -d -m 0755 -o root -g root /var/nix
+RemainAfterExit=yes
+
+[Install]
+RequiredBy=nix.mount
