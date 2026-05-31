@@ -6,6 +6,8 @@ modules:
     files:
       - source: nix-tmpfiles
         destination: /usr/lib/tmpfiles.d/
+      - source: nix-profile
+        destination: /etc/profile.d/
 
   - type: systemd
     system:
