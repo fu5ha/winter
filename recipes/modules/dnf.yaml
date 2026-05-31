@@ -10,7 +10,6 @@ install:
   packages:
     - ghostty
     - btrfs-assistant # GUI for btrfs snaphots and other
-    - "@development-tools"
     - clang
     - llvm
     - hx
@@ -19,9 +18,4 @@ install:
     - rg
 group-install:
   packages:
-    - virtualization
-remove:
-  packages:
-    # Remove firefox, in favor of the flatpak
-    - firefox
-    - firefox-langpacks
+    - development-tools
