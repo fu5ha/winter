@@ -5,7 +5,7 @@ name: winter
 description: My personal OS image.
 
 base-image: ghcr.io/ublue-os/bazzite-nvidia-open
-image-version: 44
+image-version: stable-44
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
