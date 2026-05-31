@@ -1,7 +1,10 @@
 [Unit]
 Description=Create backing directory for /nix bind mount
 DefaultDependencies=no
+After=systemd-remount-fs.service
 Before=nix.mount
+Before=local-fs.target
+RequiresMountsFor=/var
 
 [Service]
 Type=oneshot
