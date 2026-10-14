@@ -13,5 +13,9 @@ modules:
     - from-file: modules/system-files.yaml
     - from-file: modules/nix.yaml
     - from-file: modules/dnf.yaml
+    # Temporary until Fedora 44 ships the uresourced priority-loop fix.
+    - type: script
+      scripts:
+        - build-uresourced.sh
     - from-file: modules/default-flatpaks.yaml
     - from-file: modules/signing.yaml
