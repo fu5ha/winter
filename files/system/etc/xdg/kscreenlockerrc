@@ -1,0 +1,6 @@
+[Daemon]
+LockOnStart=true
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/usr/share/wallpapers/convergence.jxl
+PreviewImage=/usr/share/wallpapers/convergence.jxl

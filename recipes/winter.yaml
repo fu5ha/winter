@@ -11,6 +11,7 @@ image-version: stable-44
 # you can include multiple instances of the same module
 modules:
     - from-file: modules/system-files.yaml
+    - from-file: modules/tailscale.yaml
     - from-file: modules/nix.yaml
     - from-file: modules/dnf.yaml
     # Temporary until Fedora 44 ships the uresourced priority-loop fix.

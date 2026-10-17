@@ -1,0 +1,13 @@
+[Unit]
+Description=Apply declarative Tailscale node preferences
+Documentation=https://tailscale.com/docs/reference/tailscale-cli/set
+After=tailscaled.service network-online.target
+Wants=tailscaled.service network-online.target
+ConditionPathExists=/var/lib/tailscale/tailscaled.state
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/winter-tailscale-prefs
+
+[Install]
+WantedBy=multi-user.target

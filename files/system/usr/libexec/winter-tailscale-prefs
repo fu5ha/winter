@@ -1,0 +1,16 @@
+#!/bin/sh
+# Node preferences live inside tailscaled's state file (with the node
+# key), so they cannot be shipped as config. Re-apply the desired
+# preferences on every boot once the node is logged in and running.
+# Login itself is a one-time host step: `tailscale up`.
+set -u
+
+for _ in $(seq 1 60); do
+    if tailscale ip -4 >/dev/null 2>&1; then
+        exec tailscale set --ssh --accept-routes --accept-dns
+    fi
+    sleep 2
+done
+
+echo "tailscale node not running yet; leaving preferences unchanged" >&2
+exit 0

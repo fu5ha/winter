@@ -9,13 +9,14 @@ repos:
 install:
   packages:
     - ghostty
-    - btrfs-assistant # GUI for btrfs snaphots and other
+    - btrfs-assistant
     - clang
     - llvm
     - hx
     - zoxide
     - fd
     - rg
+    - tailscale
 group-install:
   packages:
     - development-tools
