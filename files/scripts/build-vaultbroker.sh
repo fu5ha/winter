@@ -3,8 +3,8 @@ set -euo pipefail
 
 # Install vaultbroker (pinned release binary from fu5ha/vaultbroker) and
 # the Bitwarden CLI it drives. Bump versions and hashes together.
-vaultbroker_version=0.1.0
-vaultbroker_sha256=bc3fb602dbc4a806ed5382e3aafe5e1e8c12acfaeac37c8b956c63cf1bc29b6d
+vaultbroker_version=0.2.0
+vaultbroker_sha256=196b33937a00fc99dc0ec8a9e192356d62562d69add6e5ea11e2661005fd42eb
 bw_version=2026.10.0
 bw_sha256=269b67559caab860d1737f7554b32bdb8be9285d5689fee55193c137a0df9973
 
