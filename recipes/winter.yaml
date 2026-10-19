@@ -18,5 +18,7 @@ modules:
     - type: script
       scripts:
         - build-uresourced.sh
+        - build-vaultbroker.sh
+    - from-file: modules/vaultbroker.yaml
     - from-file: modules/default-flatpaks.yaml
     - from-file: modules/signing.yaml

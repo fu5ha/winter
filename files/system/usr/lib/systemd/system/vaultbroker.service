@@ -1,0 +1,30 @@
+[Unit]
+Description=Bitwarden secret broker service for agents
+After=network-online.target tailscaled.service
+Wants=network-online.target
+ConditionPathExists=/etc/vaultbroker/config.json
+
+[Service]
+User=vaultbroker
+Group=vaultbroker
+ExecStart=/usr/libexec/vaultbroker-launch
+Restart=on-failure
+RuntimeDirectory=vaultbroker
+RuntimeDirectoryMode=0750
+StateDirectory=vaultbroker
+StateDirectoryMode=0700
+UMask=0027
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LimitCORE=0
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

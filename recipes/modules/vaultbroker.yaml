@@ -1,0 +1,9 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+type: systemd
+system:
+  enabled:
+    # Unit carries ConditionPathExists=/etc/vaultbroker/config.json, so it
+    # stays off until the broker is configured on the machine.
+    - vaultbroker.service

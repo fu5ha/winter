@@ -1,0 +1,10 @@
+#!/bin/sh
+# Dev override. A root-installed binary in /usr/local wins over the image
+# copy, so broker changes don't need an image rebuild and reboot while the
+# broker is under development. /usr/local is root-writable only, so the
+# tamper barrier holds. Delete the override once the image ships the
+# stable build.
+if [ -x /usr/local/libexec/vaultbroker ]; then
+    exec /usr/local/libexec/vaultbroker "$@"
+fi
+exec /usr/libexec/vaultbroker "$@"
