@@ -21,6 +21,12 @@ modules:
         - nix
         - nix-daemon # nix multi-user/systemd install
 
+  # After the RPM install, so it replaces the package's nix.conf.
+  - type: files
+    files:
+      - source: nix-conf
+        destination: /etc/nix/
+
   - type: systemd
     system:
       enabled:
