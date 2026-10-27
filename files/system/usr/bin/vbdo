@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+cmd=$(readlink -f "$(command -v -- "$1")")
+shift
+exec sudo -u vaultbroker -- "$cmd" "$@"
